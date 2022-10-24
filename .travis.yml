@@ -5,9 +5,9 @@ node_js:
 services:
   - docker
 
-  # Pre-testing installs
-  install:
-    - echo "nothing needs to be installed"
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
 
 # Scripts to be run such as tests
 before_script:
@@ -25,10 +25,10 @@ script:
   - docker tag udagram-api-user steemz/udagram-api-new:v2a
   - docker tag udagram-frontend steemz/udagram-frontend-new:local1
 
-  # Tasks to perform after the process is successful. Formatting the Docker username and password
-  after_success:
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    - docker push steemz/udagram-reverseproxy-new:v2a
-    - docker push steemz/udagram-api-feed-new:v2a
-    - docker push steemz/udagram-api-user-new:v2a
-    - docker push steemz/udagram-frontend-new:local1
+# Tasks to perform after the process is successful. Formatting the Docker username and password
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push steemz/udagram-reverseproxy-new:v2a
+  - docker push steemz/udagram-api-feed-new:v2a
+  - docker push steemz/udagram-api-user-new:v2a
+  - docker push steemz/udagram-frontend-new:local1
