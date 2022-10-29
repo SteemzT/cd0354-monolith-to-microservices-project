@@ -23,7 +23,7 @@ script:
   - docker tag reverseproxy steemz/udagram-reverseproxy-two:v4a
   - docker tag udagram-api-feed steemz/udagram-api-feed-two:v4a
   - docker tag udagram-api-user steemz/udagram-api-user-two:v4a
-  - docker tag udagram-frontend steemz/udagram-frontend-two:local3
+  - docker tag udagram-frontend steemz/udagram-frontend-two:v4a
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password
 after_success:
@@ -31,4 +31,4 @@ after_success:
   - docker push steemz/udagram-reverseproxy-two:v4a
   - docker push steemz/udagram-api-feed-two:v4a
   - docker push steemz/udagram-api-user-two:v4a
-  - docker push steemz/udagram-frontend-two:local3
+  - docker push steemz/udagram-frontend-two:v4a
